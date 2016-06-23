@@ -91,14 +91,32 @@
           <br>
           <p>Exercise for student to practice with after every module.</p>
           <b>Example</b>
-          <form class="fragment">
+          <form action="tryExercise()" class="fragment" id=exercise>
             <p>Using tangent ratio to find the length of a side of a right triangle In a ∆ABC, &ang;B=90 &deg;, &ang;C=20&deg; and BC=15 cm find AB to 2 s.f. </p>
 
 
-            <input type="radio" name="question1">(A) 6.5 cm
-            <input type="radio" name="question1">(B) 4.5 cm
-            <input type="radio" name="question1">(C) 5.5 cm
-            <input type="radio" name="question1">(D) 10.5 cm
+            <input type="radio" id="A" value="6.5 cm" name="question1">(A) 6.5 cm
+            <input type="radio" id="B" value="4.5 cm" name="question1">(B) 4.5 cm
+            <input type="radio" id="C" value="5.5 cm" name="question1">(C) 5.5 cm
+            <input type="radio" id="D" value="10.5 cm" name="question1">(D) 10.5 cm
+            <!--Exercise-->
+            <script>
+              function tryExercise() {
+                if (document.getElementById('A').checked) {
+                  answer = document.getElementById('A').value;
+                } else if (document.getElementById('B').checked) {
+                  answer = document.getElementById('B').value;
+                } else if (document.getElementById('C').checked) {
+                  answer = document.getElementById('C').value;
+                } else answer = document.getElementById('D').value;
+
+                if (answer == "4.5 cm") {
+                  alert("correct");
+                } else {
+                  alert("error");
+                }
+              }
+            </script>
 
           </form>
         </section>
